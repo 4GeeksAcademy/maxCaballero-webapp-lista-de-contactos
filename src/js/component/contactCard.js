@@ -7,17 +7,23 @@ const ContactCard = ({ contact, onDelete }) => {
             <p>{contact.email}</p>
             <p>{contact.phone}</p>
             <button onClick={() => onDelete(contact.id)}>Eliminar</button> */
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
+        <div className="card mb-3" style="max-width: 540px;">
+          <div className="row g-0">
+            <div className="col-md-3">
+              <img src="..." className="img-fluid rounded-start" alt="..." />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div className="col-md-6">
+              <div className="card-body">
+                <h5 className="card-full_name">{contact.full_name}</h5>
+                <p className="card-address"><i class="fa-solid fa-location-dot"></i> {contact.address}</p>
+                <p className="card-email"><i class="fa-solid fa-envelope"></i> {contact.email}</p>
+                <p className="card-phone"><i class="fa-solid fa-phone"></i>{contact.phone}</p>
               </div>
+            </div>
+            <div className="col-md-3">
+              <button onClick={() => onEdit(contact.id)}><i class="fa-sharp fa-solid fa-pencil"></i></button>
+              <button onClick={() => onDelete(contact.id)}><i class="fa-solid fa-trash-can"></i></button>
+
             </div>
           </div>
         </div>}
